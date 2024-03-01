@@ -1,7 +1,7 @@
 import * as prismic from '@prismicio/client'
 
 // Fill in your repository name
-export const repositoryName = 'travel-blog'
+export const repositoryName = 'my-blog-travel'
 
 export const client = prismic.createClient(repositoryName, {
   // If your repository is private, add an access token
@@ -14,9 +14,9 @@ export const client = prismic.createClient(repositoryName, {
   // If you are not using a router in your project, you can change this
   // to an empty array or remove the option entirely.
   routes: [
-    {
-      type: 'homepage',
-      path: '/',
-    },
+    // {
+    //   type: 'homepage',
+    //   path: '/',
+    // },
   ],
 })
