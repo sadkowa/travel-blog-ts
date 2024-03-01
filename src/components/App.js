@@ -1,12 +1,15 @@
-import {Wrapper, Header} from '.'
-
-
-
 function App() {
   return (
-    // <Wrapper>
-    <Header />
-    // </Wrapper>
+    <header style={{ backgroundColor: 'grey', height:'300px' }}>
+      <nav>
+        <ul>
+          <li>About</li>
+          <li>Category</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+      <h1>Blog</h1>
+    </header>
   );
 }
 
