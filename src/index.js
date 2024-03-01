@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './components/App';
 import ResetStyle from './components/global/Reset';
 import GlobalStyle from './components/global/Global';
+
+import { PrismicProvider } from '@prismicio/react';
+import { client } from './providers/prismic';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ResetStyle/>
     <GlobalStyle/>
-    <App />
+    <PrismicProvider client={client}>
+      <App />
+    </PrismicProvider>
   </React.StrictMode>
 );
 
