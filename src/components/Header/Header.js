@@ -2,14 +2,14 @@ import React from "react";
 import StyledHeader from "./Header.styled";
 import {MainHeading, NavBar} from '../'
 
-const Header = ({ children }) => {
+import { navTitles } from "../../helpers/data"
+
+const Header = () => {
 
     return <StyledHeader>
         <NavBar>
         <ul>
-          <li>About</li>
-          <li>Category</li>
-          <li>Contact</li>
+          {navTitles.map((item, index) => <li key={index}>{item}</li>)}
         </ul>
       </NavBar>
       <MainHeading text='Welcome at my blog!'/>
