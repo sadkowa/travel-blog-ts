@@ -6,7 +6,7 @@ const StyledBlog = styled.section`
     align-items: center;
     width: 100%;
     height: 300px;
-    margin-top: 30px
+    margin: 30px 0
 `
 
 export default StyledBlog

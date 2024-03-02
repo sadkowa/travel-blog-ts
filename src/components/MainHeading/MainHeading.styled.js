@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 const StyledMainHeading = styled.h1`
-    padding: ${({theme})=> theme.paddings.small};
-    margin-bottom: ${({theme})=> theme.paddings.xlarge};
+    padding: ${({theme})=> theme.spaces.small};
+    margin-bottom: ${({theme})=> theme.spaces.xlarge};
     justify-content: center;
     align-items: center;
     color: white;

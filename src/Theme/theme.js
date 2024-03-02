@@ -1,10 +1,9 @@
 const themeSettings = {
     colorsText: {
         light: '#fff',
-        dark: '#5c6a77',
-        darkText: '#595d60',
+        dark: '#595d60',
     },
-    paddings: {
+    spaces: {
         xxxsmall: '2px',
         xxsmall: '4px',
         xsmall: '7px',
@@ -21,12 +20,13 @@ const themeSettings = {
         large: '15px',
     },
     fontSizes: {
-        xxsmall: '1rem',
-        xsmall: '1.1rem',
-        small: '1.3rem',
-        medium: '1.5rem',
-        large: '2.0rem',
-        xlarge: '3rem',
+        xxxsmall: '1rem',
+        xxsmall: '1.3rem',
+        xsmall: '1.5rem',
+        small: '1.8rem',
+        medium: '2.0rem',
+        large: '2.5rem',
+        xlarge: '3.0rem',
         xxlarge: '3.5rem',
         xxxlarge: '4.0rem',
     },
