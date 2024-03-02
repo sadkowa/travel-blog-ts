@@ -1,8 +1,12 @@
 import { Header } from '.'
+import { Blog } from '../views';
 
 function App() {
   return (
-    <Header />
+    <>
+      <Header />
+      <Blog />
+    </>
   );
 }
 
