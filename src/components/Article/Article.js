@@ -87,6 +87,7 @@ const StyledFooter = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: ${({ theme }) => theme.spaces.medium}
 `
 
 const StyledCategory = styled.h6`
