@@ -6,6 +6,8 @@ import GlobalStyle from './styles/global/Global';
 
 import { PrismicProvider } from '@prismicio/react';
 import { client } from './providers/prismic';
+import { ThemeProvider } from 'styled-components';
+import themeSettings from './Theme/theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +15,9 @@ root.render(
     <ResetStyle/>
     <GlobalStyle/>
     <PrismicProvider client={client}>
-      <App />
+      <ThemeProvider theme={themeSettings}>
+        <App />
+      </ThemeProvider>
     </PrismicProvider>
   </React.StrictMode>
 );
