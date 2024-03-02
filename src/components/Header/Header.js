@@ -46,6 +46,6 @@ const StyledListItem = styled.li`
   cursor: pointer;
 
   &:hover {
-    background-color: lightgray;
+    background-color: rgba(0,0,0, 0.1);
   }
 `
