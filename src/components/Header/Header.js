@@ -13,11 +13,11 @@ const Header = () => {
 
     return <StyledHeader>
         <NavBar>
-        <Wrapper>
-          <StyledList>
-            {navTitles.map((item, index) => <ListItem key={index}>{item}</ListItem>)}
-          </StyledList>
-        </Wrapper>
+          <Wrapper>
+            <StyledList>
+              {navTitles.map((item, index) => <ListItem key={index}>{item}</ListItem>)}
+            </StyledList>
+          </Wrapper>
       </NavBar>
       <MainHeading text='Welcome at my blog!'/>
     </StyledHeader>
