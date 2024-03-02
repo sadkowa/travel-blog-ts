@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
-import { ResetStyle, GlobalStyle } from './styles/global'
+import ResetStyle from './components/global/Reset';
+import GlobalStyle from './components/global/Global';
 
 import { PrismicProvider } from '@prismicio/react';
 import { client } from './providers/prismic';
