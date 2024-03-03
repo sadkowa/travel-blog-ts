@@ -1,1 +1,1 @@
-export const navTitles = ['About', 'Category', 'Contact']
+export const navTitles = ['Home', 'About', 'Category', 'Contact']
