@@ -1,7 +1,9 @@
 const themeSettings = {
     colors: {
         light: '#fff',
+        lightHover: '#ccc',
         dark: '#4A484B',
+        darkHover: '#363537',
     },
     spaces: {
         xxxsmall: '2px',

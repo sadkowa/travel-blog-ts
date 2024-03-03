@@ -9,7 +9,6 @@ import * as prismicH from '@prismicio/helpers';
 
 const Article = ({ post }) => {
 
-    console.log(post)
     const { category, content, img, intro, title, date } = post.data
     const titleText = prismicH.asText(title)
     const introText = prismicH.asText(intro)
