@@ -6,6 +6,7 @@ import Article from "./Article";
 import Button from "./Button";
 import Footer from "./Footer";
 import Pagination from "./Pagination";
+import ButtonsSection from "./ButtonsSection";
 
 export {
     Wrapper,
@@ -16,4 +17,5 @@ export {
     Button,
     Footer,
     Pagination,
+    ButtonsSection,
 }
