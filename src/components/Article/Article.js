@@ -2,21 +2,28 @@ import React from "react";
 
 import styled from "styled-components";
 import StyledArticle from "./Arcticle.styled";
-import Wrapper from "../Wrapper";
-import img from '../../assets/header-img.jpg'
-import Button from "../Button";
+import { Wrapper, Button } from '../'
+
+import * as prismicH from '@prismicio/helpers';
+
 
 const Article = ({ post }) => {
 
+    console.log(post)
+    const { category, content, img, intro, title, date } = post.data
+    const titleText = prismicH.asText(title)
+    const introText = prismicH.asText(intro)
+
     return <StyledArticle>
-        <StyledImg src={img} alt="" />
+        <StyledImg src={img.url} alt={img.alt} />
         <Wrapper>
-            <StyledTitle>title</StyledTitle>
-            <StyledDate>date</StyledDate>
-        <StyledText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia aut velit magnam quaerat ducimus repellat voluptatem repellendus blanditiis facere eos, ipsum aspernatur exercitationem quae nisi. Odit similique laboriosam quidem culpa eaque et reiciendis nobis nemo blanditiis corrupti, ut officiis excepturi minima sint. Repellendus aliquid, eius impedit iusto nisi minima fugiat!</StyledText>
+            <StyledTitle>{titleText}</StyledTitle>
+            <StyledDate>{date}</StyledDate>
+            {/* {content.map(item=> <StyledText>{item.text}</StyledText>)} */}
+            <StyledText>{introText}</StyledText>
         <StyledFooter>
             <Button>{'Read more >>'}</Button>
-            <StyledCategory>category</StyledCategory>
+                <StyledCategory>{category.uid}</StyledCategory>
         </StyledFooter>
         </Wrapper>
 
@@ -27,14 +34,11 @@ export default Article
 
 const StyledImg = styled.img`
     width: 100%;
-    height: 100px;
+    height: 200px;
     object-fit: cover;
 
     @media ${({ theme }) => theme.media.tablet} {
-        height: 200px;
-    }
-    @media ${({ theme }) => theme.media.desktop} {
-        height: 250px;
+        height: 300px;
     }
 `
 
@@ -46,9 +50,6 @@ const StyledTitle = styled.h3`
 
     @media ${({ theme }) => theme.media.tablet} {
         font-size: ${({ theme }) => theme.fontSizes.small};
-    }
-    @media ${({ theme }) => theme.media.desktop} {
-        font-size: ${({ theme }) => theme.fontSizes.medium};
     }
 `
 
@@ -74,12 +75,10 @@ const StyledText = styled.p`
     @media ${({ theme }) => theme.media.tablet} {
         font-size: ${({ theme }) => theme.fontSizes.xxsmall};
         line-height: ${({ theme }) => theme.fontSizes.medium};
-
     }
     @media ${({ theme }) => theme.media.desktop} {
         margin: ${({ theme }) => theme.spaces.large} 0;
-        line-height: ${({ theme }) => theme.fontSizes.large};
-
+        min-height: 170px;
     }
 `
 
@@ -97,11 +96,9 @@ const StyledCategory = styled.h6`
     @media ${({ theme }) => theme.media.tablet} {
         font-size: ${({ theme }) => theme.fontSizes.xxsmall};
         line-height: ${({ theme }) => theme.fontSizes.medium};
-
     }
     @media ${({ theme }) => theme.media.desktop} {
         margin-right: ${({ theme }) => theme.spaces.large};
         line-height: ${({ theme }) => theme.fontSizes.large};
-
     }
 `

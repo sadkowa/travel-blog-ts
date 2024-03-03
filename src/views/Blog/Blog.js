@@ -7,9 +7,7 @@ const Blog = ({ posts }) => {
     return (
         <Wrapper>
             <StyledBlog>
-                BLOG
-                <Article/>
-                {/* {posts.map(item => <Article />)} */}
+                {posts.map(item => <Article post={item}/>)}
             </StyledBlog>
         </Wrapper>
     )
