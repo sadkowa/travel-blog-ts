@@ -6,9 +6,9 @@ const StyledFooter = styled.footer`
     align-items: center;
     width: 100%;
     height: 80px;
-    background-color: black;
+    background-color: ${({ theme }) => theme.colors.dark};;
     font-size: ${({ theme }) => theme.fontSizes.xxxsmall};
-    color: ${({ theme }) => theme.colorsText.light};
+    color: ${({ theme }) => theme.colors.light};
 
     @media ${({ theme }) => theme.media.tablet} {
         height: 100px;

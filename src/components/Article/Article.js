@@ -51,13 +51,17 @@ const StyledTitle = styled.h3`
     @media ${({ theme }) => theme.media.tablet} {
         font-size: ${({ theme }) => theme.fontSizes.small};
     }
+    @media ${({ theme }) => theme.media.desktop} {
+        min-height: 75px;
+
+    }
 `
 
 const StyledDate = styled.h5`
     margin: ${({ theme }) => theme.spaces.small} 0;
     font-size: ${({ theme }) => theme.fontSizes.xxsmall};
     font-weight: 400;
-    color: ${({theme}) => theme.colorsText.dark};
+    color: ${({theme}) => theme.colors.dark};
     
     @media ${({ theme }) => theme.media.tablet} {
         font-size: ${({ theme }) => theme.fontSizes.xsmall};
@@ -78,7 +82,7 @@ const StyledText = styled.p`
     }
     @media ${({ theme }) => theme.media.desktop} {
         margin: ${({ theme }) => theme.spaces.large} 0;
-        min-height: 170px;
+        min-height: 200px;
     }
 `
 
