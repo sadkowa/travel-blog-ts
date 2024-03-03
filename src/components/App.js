@@ -1,5 +1,5 @@
-import { Footer, Header } from '.'
-import { Blog } from '../views';
+import { Footer, Header, Wrapper } from '.'
+import { About, Blog } from '../views';
 import * as prismicH from '@prismicio/helpers';
 
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
@@ -16,8 +16,12 @@ function App() {
   return (
     <>
       <Header />
-      <Blog posts={posts} />
+      <Wrapper>
+        <Blog posts={posts} />
+        {/* <About /> */}
+      </Wrapper>
       <Footer />
+
     </>
   );
 }

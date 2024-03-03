@@ -1,3 +1,4 @@
-import Blog from "./Blog/Blog";
+import Blog from "./Blog"
+import About from "./About"
 
-export { Blog }
+export { Blog, About }
