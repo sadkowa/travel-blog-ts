@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Wrapper, Article, Pagination, ButtonsSection } from "../../components";
+import { Pagination, ButtonsSection } from "../../components";
 import StyledBlog from "./Blog.styled";
 import styled from "styled-components";
 
@@ -20,7 +20,7 @@ const Blog = ({ posts }) => {
     }
 
     return (
-        <Wrapper>
+        <>
             <StyledHeading>All articles</StyledHeading>
             <StyledBlog>
                 <Pagination 
@@ -34,7 +34,7 @@ const Blog = ({ posts }) => {
                 pages={pages}
                 onPageChange={handlePageChange}
             />}
-        </Wrapper>
+        </>
     )
 }
 

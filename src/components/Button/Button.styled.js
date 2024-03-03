@@ -12,7 +12,7 @@ const StyledButton = styled.button`
     cursor: pointer;
 
     &:hover {
-        background-color: #f1f1f1
+        background-color: ${({ theme }) => theme.colors.lightHover};
     }
    
 
@@ -28,7 +28,7 @@ const StyledButton = styled.button`
             background-color: ${theme.colors.lightHover};
             border: 1px solid ${({ theme }) => theme.colors.lightHover};
             cursor: not-allowed;
-    }
+        }
     `};
 
     @media ${props => props.theme.media.tablet} {
