@@ -13,13 +13,15 @@ const About = () => {
     if (!document) return
 
     const data = getData(document.data)
-    const { imgSrc, imgAlt, text } = data
+    const { imgSrc, imgAlt, textContent } = data
 
     return (
         <Wrapper>
             <StyledAbout>
                 <StyledImgPerson src={imgSrc} alt={imgAlt} />
-                {text.map(item => <StyledAboutText>{item.text}</StyledAboutText>)}
+                {textContent.map((item, index) => {
+                    return <StyledAboutText key={index}>{item.text}</StyledAboutText>
+                })}
             </StyledAbout>
         </Wrapper>
     )

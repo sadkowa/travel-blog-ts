@@ -1,7 +1,7 @@
 import * as prismicH from '@prismicio/helpers';
 
 export const getData = data => {
-    const { title, intro, img, text, date, category } = data
+    const { title, intro, img, text, date, category = '' } = data
 
     const titleText = prismicH.asText(title)
     const introText = prismicH.asText(intro)
