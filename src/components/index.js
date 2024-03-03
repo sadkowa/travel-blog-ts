@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import Article from "./Article";
 import Button from "./Button";
 import Footer from "./Footer";
+import Pagination from "./Pagination";
 
 export {
     Wrapper,
@@ -14,4 +15,5 @@ export {
     Article,
     Button,
     Footer,
+    Pagination,
 }

@@ -1,13 +1,22 @@
-import React from "react";
-import { Wrapper, Article } from "../../components";
+import React, {useState} from "react";
+import { Wrapper, Article, Pagination } from "../../components";
 import StyledBlog from "./Blog.styled";
 
 
 const Blog = ({ posts }) => {
+    const [page, setPage] = useState(1)
+    const paginationLimit = 4
+
+    const pages = Math.ceil(posts.length / paginationLimit)
+
     return (
         <Wrapper>
             <StyledBlog>
-                {posts.map(item => <Article post={item}/>)}
+                <Pagination 
+                    paginationLimit={paginationLimit}
+                    page={page}
+                    displayData={posts}
+                />
             </StyledBlog>
         </Wrapper>
     )
