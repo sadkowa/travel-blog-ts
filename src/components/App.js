@@ -1,5 +1,5 @@
 import { Footer, Header, NotFound, Wrapper } from '.'
-import { About, Blog, Contact } from '../views';
+import { About, Blog, Contact, ArticlePage } from '../views';
 import * as prismicH from '@prismicio/helpers';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom/'
 
@@ -25,11 +25,14 @@ function App() {
           <Route path='/page/:id'>
             <Blog posts={posts} />
           </Route>
-          <Route path='/about'>
+          <Route exact path='/about'>
             <About />
           </Route>
           <Route path='/contact'>
             <Contact />
+          </Route>
+          <Route path='/article/:category/:slug'>
+            <ArticlePage posts={posts}/>
           </Route>
           <Route><NotFound /></Route>
         </Switch>
