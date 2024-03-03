@@ -1,7 +1,7 @@
-import { Footer, Header, Wrapper } from '.'
+import { Footer, Header, NotFound, Wrapper } from '.'
 import { About, Blog, Contact } from '../views';
 import * as prismicH from '@prismicio/helpers';
-import { HashRouter as Router, Route } from 'react-router-dom/'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom/'
 
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
 
@@ -18,16 +18,21 @@ function App() {
     <Router>
       <Header />
       <Wrapper>
-        <Route exact path='/'>
-          <Blog posts={posts} />
-        </Route>
-        <Route path='/about'>
-          <About/>
-        </Route>
-        <Route path='/contact'>
-          <Contact/>
-        </Route>
-
+        <Switch>
+          <Route exact path='/'>
+            <Blog posts={posts} />
+          </Route>
+          <Route path='/page/:id'>
+            <Blog posts={posts} />
+          </Route>
+          <Route path='/about'>
+            <About />
+          </Route>
+          <Route path='/contact'>
+            <Contact />
+          </Route>
+          <Route><NotFound /></Route>
+        </Switch>
       </Wrapper>
       <Footer />
 
