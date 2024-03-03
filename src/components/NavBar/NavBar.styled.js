@@ -10,6 +10,10 @@ const StyledNavBar = styled.nav`
     background-color: rgba(250,250,250,0.8);
     backdrop-filter: blur(3px);
     z-index: 1;
+
+    @media ${({ theme }) => theme.media.desktop} {
+        padding-right: 7%;
+    }
 `
 
 export default StyledNavBar

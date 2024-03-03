@@ -5,7 +5,14 @@ const StyledBlog = styled.section`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 30px 0
+    max-width: 1200px;
+    margin: 30px auto;
+
+    @media ${({ theme }) => theme.media.desktop} {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 `
 
 export default StyledBlog

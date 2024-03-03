@@ -32,7 +32,7 @@ const themeSettings = {
     },
     media: {
         tablet: 'screen and (min-width: 600px)',
-        desktop: 'screen and (min-width: 1000px)',
+        desktop: 'screen and (min-width: 1050px)',
     }
 }
 
