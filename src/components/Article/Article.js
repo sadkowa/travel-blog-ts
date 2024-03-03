@@ -4,17 +4,22 @@ import styled from "styled-components";
 import StyledArticle from "./Arcticle.styled";
 import { Wrapper, Button } from '../'
 
-import * as prismicH from '@prismicio/helpers';
-
+import { getData } from "../../helpers/functions";
 
 const Article = ({ post }) => {
 
-    const { category, content, img, intro, title, date } = post.data
-    const titleText = prismicH.asText(title)
-    const introText = prismicH.asText(intro)
+    const {
+        titleText,
+        introText,
+        imgSrc,
+        imgAlt,
+        categoryName,
+        date
+    } = getData(post.data)
 
-    return <StyledArticle>
-        <StyledImg src={img.url} alt={img.alt} />
+    return (
+        <StyledArticle>
+            <StyledImg src={imgSrc} alt={imgAlt} />
         <Wrapper>
             <StyledTitle>{titleText}</StyledTitle>
             <StyledDate>{date}</StyledDate>
@@ -22,11 +27,10 @@ const Article = ({ post }) => {
             <StyledText>{introText}</StyledText>
         <StyledFooter>
             <Button>{'Read more >>'}</Button>
-                <StyledCategory>{category.uid}</StyledCategory>
+                    <StyledCategory>{categoryName}</StyledCategory>
         </StyledFooter>
         </Wrapper>
-
-    </StyledArticle>
+        </StyledArticle>)
 }
 
 export default Article
@@ -52,7 +56,6 @@ const StyledTitle = styled.h3`
     }
     @media ${({ theme }) => theme.media.desktop} {
         min-height: 75px;
-
     }
 `
 
@@ -70,7 +73,7 @@ const StyledDate = styled.h5`
     }
 `
 
-const StyledText = styled.p`
+export const StyledText = styled.p`
     margin: ${({ theme }) => theme.spaces.medium} 0;
     font-size: ${({ theme }) => theme.fontSizes.xxxsmall};
     line-height: ${({ theme }) => theme.fontSizes.xxsmall};
