@@ -16,14 +16,14 @@ const About = () => {
     const { imgSrc, imgAlt, textContent } = data
 
     return (
-        <Wrapper>
+   
             <StyledAbout>
                 <StyledImgPerson src={imgSrc} alt={imgAlt} />
                 {textContent.map((item, index) => {
                     return <StyledAboutText key={index}>{item.text}</StyledAboutText>
                 })}
             </StyledAbout>
-        </Wrapper>
+
     )
 }
 

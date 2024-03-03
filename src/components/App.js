@@ -1,6 +1,7 @@
 import { Footer, Header, Wrapper } from '.'
-import { About, Blog } from '../views';
+import { About, Blog, Contact } from '../views';
 import * as prismicH from '@prismicio/helpers';
+import { HashRouter as Router, Route } from 'react-router-dom/'
 
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
 
@@ -14,15 +15,23 @@ function App() {
   const categoriesArr = categories.map(item => prismicH.asText(item.data.name));
 
   return (
-    <>
+    <Router>
       <Header />
       <Wrapper>
-        <Blog posts={posts} />
-        {/* <About /> */}
+        <Route exact path='/'>
+          <Blog posts={posts} />
+        </Route>
+        <Route path='/about'>
+          <About/>
+        </Route>
+        <Route path='/contact'>
+          <Contact/>
+        </Route>
+
       </Wrapper>
       <Footer />
 
-    </>
+    </Router>
   );
 }
 
