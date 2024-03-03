@@ -1,4 +1,4 @@
-import { Header } from '.'
+import { Footer, Header } from '.'
 import { Blog } from '../views';
 import * as prismicH from '@prismicio/helpers';
 
@@ -17,7 +17,7 @@ function App() {
     <>
       <Header />
       <Blog posts={posts} />
-      {/* <Footer/> */}
+      <Footer />
     </>
   );
 }
