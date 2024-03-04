@@ -1,46 +1,35 @@
 import React from "react";
 
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import StyledArticle from "./Arcticle.styled";
 import { Wrapper, Button } from '../'
 
 import { getData } from "../../helpers/functions";
-import { Link } from "react-router-dom";
 
-const Article = ({ post, view }) => {
+const Article = ({ post }) => {
 
     const {
         titleText,
         introText,
-        articleContent,
         imgSrc,
         imgAlt,
         categoryName,
-        date,
+        date
     } = getData(post.data)
-
-    const slug = post.uid
 
     return (
         <StyledArticle>
-            <StyledImg src={imgSrc} alt={imgAlt} $view={view} />
-            <Wrapper>
-                <StyledTitle>{titleText}</StyledTitle>
-                <StyledDate>{date}</StyledDate>
-                {view
-                    ? articleContent.map((item, index) => <StyledArticleContent
-                        key={index}>
-                        {item.text}
-                    </StyledArticleContent>)
-                    : <StyledText>{introText}</StyledText>}
-
-                {!view && <StyledFooter>
-                    <Link to={`/article/${categoryName}/${slug}`}>
-                        <Button>{'Read more >>'}</Button>
-                    </Link>
+            <StyledImg src={imgSrc} alt={imgAlt} />
+        <Wrapper>
+            <StyledTitle>{titleText}</StyledTitle>
+            <StyledDate>{date}</StyledDate>
+            {/* {content.map(item=> <StyledText>{item.text}</StyledText>)} */}
+            <StyledText>{introText}</StyledText>
+        <StyledFooter>
+            <Button>{'Read more >>'}</Button>
                     <StyledCategory>{categoryName}</StyledCategory>
-                </StyledFooter>}
-            </Wrapper>
+        </StyledFooter>
+        </Wrapper>
         </StyledArticle>)
 }
 
@@ -53,16 +42,7 @@ const StyledImg = styled.img`
 
     @media ${({ theme }) => theme.media.tablet} {
         height: 300px;
-    };
-
-    ${({ $view, theme }) => $view && css`
-        @media ${theme.media.tablet} {
-            height: 350px
-        }
-        @media ${theme.media.desktop} {
-            height: 450px
-        }
-    `}
+    }
 `
 
 const StyledTitle = styled.h3`
@@ -108,21 +88,11 @@ export const StyledText = styled.p`
     }
 `
 
-const StyledArticleContent = styled(StyledText)(
-    () => (css`
-        min-height: 0;
-
-        &:last-child {
-            padding-bottom: 50px
-        }
-    ` )
-)
-
 const StyledFooter = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: ${({ theme }) => theme.spaces.medium};
+    margin-bottom: ${({ theme }) => theme.spaces.medium}
 `
 
 const StyledCategory = styled.h6`
