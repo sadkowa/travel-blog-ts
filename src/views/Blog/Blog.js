@@ -1,23 +1,28 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
+
 import { Pagination, ButtonsSection } from "../../components";
 import StyledBlog from "./Blog.styled";
 import styled from "styled-components";
-
+import { useParams, Redirect } from "react-router-dom"
 
 const Blog = ({ posts }) => {
     const [page, setPage] = useState(1)
     const paginationLimit = 4
 
-    const pages = Math.ceil(posts.length / paginationLimit)
+    const pagesNumber = Math.ceil(posts.length / paginationLimit)
+    const { id } = useParams()
 
-    const handlePageChange = (text) => {
-        if (text === 'Next') {
-            setPage(page => page + 1)
-        }
-        if (text === 'Previous') {
-            setPage(page => page - 1)
-        }
+    useEffect(() => {
+        if (id) {
+            setPage(Number(id))
+        } 
+    }, [id])
+
+    if (id > pagesNumber) {
+        return <Redirect to='/404.html' />
     }
+
+    const pages = Math.ceil(posts.length / paginationLimit)
 
     return (
         <>
@@ -29,10 +34,9 @@ const Blog = ({ posts }) => {
                     displayData={posts}
                 />
             </StyledBlog>
-            {posts.length !== 0 && <ButtonsSection
+            {pagesNumber > 1 && <ButtonsSection
                 page={page}
                 pages={pages}
-                onPageChange={handlePageChange}
             />}
         </>
     )
