@@ -3,7 +3,7 @@ import StyledHeader from "./Header.styled";
 import { MainHeading, NavBar } from '../'
 
 import { navTitles } from "../../helpers/data"
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -23,16 +23,16 @@ const Header = () => {
   }
 
   const activeStyle = {
-    backgroundColor: 'rgba(0,0,0, 0.1)',
-    borderLeft: '1px solid #ccc',
-    borderRight: '1px solid #ccc',
+    backgroundColor: 'white',
+    borderLeft: '1px solid #ddd',
+    borderRight: '1px solid #ddd',
   }
 
   const renderListItem = () => {
     return navTitles.map(({ id, name, slug }) => {
       return <ListItem key={id}>
         <NavLink
-          exact to={slug}
+          exact to={`/${slug}`}
           style={styles}
           activeStyle={activeStyle}>
           {name}
@@ -48,7 +48,7 @@ const Header = () => {
           {renderListItem()}
             </StyledList>
       </NavBar>
-      <MainHeading text='Welcome at my blog!'/>
+      <MainHeading text='Welcome to my blog!'/>
     </StyledHeader>)
 }
 
