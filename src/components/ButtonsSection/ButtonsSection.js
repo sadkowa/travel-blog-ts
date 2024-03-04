@@ -1,26 +1,29 @@
 import React from "react";
+
 import StyledButtonsSection from "./ButtonsSection.styled";
 import { Button } from "../";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-
-const ButtonsSection = ({ page, pages, onPageChange }) => {
+const ButtonsSection = ({ page, pages }) => {
 
     return (
         <StyledButtonsSection >
-            <Button
-                disabled={page === 1 ? true : false}
-                onPageChange={onPageChange}
-                variant='dark'
+            <Link to={`/page/${page - 1}`}>
+                <Button
+                    disabled={page === 1 ? true : false}
+                    variant='dark'
                 >Previous
-            </Button>
+                </Button>
+            </Link>
             <StyledCurrentPage>{page}</StyledCurrentPage>
-            <Button
-                disabled={page === pages ? true : false}
-                onPageChange={onPageChange}
-                variant='dark'
+            <Link to={`/page/${page + 1}`}>
+                <Button
+                    disabled={page === pages ? true : false}
+                    variant='dark'
                 >Next
-            </Button>
+                </Button>
+            </Link>
         </StyledButtonsSection>
     )
 }
@@ -34,7 +37,6 @@ const StyledCurrentPage = styled.div`
     width: 30px;
     background-color: ${({ theme }) => theme.colors.light};
     font-size: ${({ theme }) => theme.fontSizes.xsmall};
-    
 
     @media ${({ theme }) => theme.media.tablet} {
         width: 40px;
@@ -42,7 +44,5 @@ const StyledCurrentPage = styled.div`
     }
     @media ${({ theme }) => theme.media.desktop} {
         font-size: ${({ theme }) => theme.fontSizes.medium};
-    }
-
-   
+    } 
 `
