@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import StyledButtonsSection from "./ButtonsSection.styled";
 import { Button } from "../";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const ButtonsSection = ({ page, pages }) => {
+const ButtonsSection = ({ page, pages, category }) => {
+    const [slug, setSlug] = useState('/page/')
+
+    useEffect(() => {
+        if (category) {
+            setSlug(`/articles/${category}/page/`)
+        } else setSlug('/page/')
+    }, [category, page])
 
     return (
         <StyledButtonsSection >
-            <Link to={`/page/${page - 1}`}>
+            <Link to={`${slug}${page - 1}`}>
                 <Button
                     disabled={page === 1 ? true : false}
                     variant='dark'
@@ -17,7 +24,7 @@ const ButtonsSection = ({ page, pages }) => {
                 </Button>
             </Link>
             <StyledCurrentPage>{page}</StyledCurrentPage>
-            <Link to={`/page/${page + 1}`}>
+            <Link to={`${slug}${page + 1}`}>
                 <Button
                     disabled={page === pages ? true : false}
                     variant='dark'
