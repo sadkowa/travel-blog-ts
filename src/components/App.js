@@ -1,5 +1,5 @@
-import { Footer, Header, NotFound, Wrapper } from '.'
-import { About, Blog, Contact, ArticlePage } from '../views';
+import { Footer, Header, Wrapper } from '.'
+import { About, Blog, Contact, ArticlePage, NotFound } from '../views';
 import * as prismicH from '@prismicio/helpers';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom/'
 

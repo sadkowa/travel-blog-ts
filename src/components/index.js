@@ -7,7 +7,6 @@ import Button from "./Button";
 import Footer from "./Footer";
 import Pagination from "./Pagination";
 import ButtonsSection from "./ButtonsSection";
-import NotFound from "./NotFound";
 import CategoriesSection from "./CategoriesSection";
 
 export {
@@ -20,6 +19,5 @@ export {
     Footer,
     Pagination,
     ButtonsSection,
-    NotFound,
     CategoriesSection,
 }
