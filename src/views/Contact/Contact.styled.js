@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 const StyledContact = styled.section`
-    max-width: 800px;
-    margin: 20px auto;
-    /* height: 50vh; */
-    color:red;
+    max-width: 700px;
+    margin: 30px auto;
 
     @media ${({ theme }) => theme.media.tablet} {
         margin: ${({ theme }) => theme.spaces.xxlarge} auto;
