@@ -1,11 +1,11 @@
 import * as prismicH from '@prismicio/helpers';
 
 export const getData = data => {
-
+    
     const {
         title,
         intro,
-        img,
+        img ='',
         text,
         content,
         date,
