@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# React Router Prismic Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Click to find out how it works!](https://my-priv-blog.netlify.app)
 
-## Available Scripts
+This task involved creating a blog using the headless CMS, Prismic, allowing content creation without the need for a dedicated admin panel. Utilized Prismic's API to fetch blog content, with a focus on well-designed URLs for an optimal user experience. 
+Implemented React Router DOM for efficient navigation, including categories, pagination and articles' names. 
 
-In the project directory, you can run:
+### Solutions
 
-### `npm start`
+In this project, I used:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React Router: Employed React Router for seamless navigation, ensuring well-structured and user-friendly URLs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Pagination: Implemented a pagination system to organize content, displaying a limited number of blog posts per page for optimal user experience.
 
-### `npm test`
+- Responsive Page Design: Ensured a responsive design to adapt seamlessly to various devices, providing an optimal viewing experience across desktops, tablets, and mobile devices.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Styled-Componentst: enhance the styling and design of the project, allowing for a modular and maintainable approach to styling React components. 
 
-### `npm run build`
+- ThemeProvider: implemented from Styled-Components to manage the global theme and styling variables across the entire application. This allowed for consistent theming, making it easier to maintain a cohesive design throughout various components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## The technologies used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-%23F7F7F7?style=for-the-badge&logo=reactrouter&logoColor=%23CA4245)
+![Styled-components](https://img.shields.io/badge/styled_components-%23DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation and configuration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In the project, [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) have been used. If you have them installed, enter the following in the terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+````
+npm i
+````
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To open the application in developer mode, use the following command:
 
-## Learn More
+````
+npm start
+````
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application is available at the following address: 
 
-### Code Splitting
+````
+http://localhost:3000
+`````
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
