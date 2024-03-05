@@ -1,18 +1,17 @@
 import React from "react";
-import { Wrapper } from '../../components'
 import { StyledText } from "../../components/Article/Article";
 import StyledAbout from "./About.styled";
 import styled from "styled-components";
 
 import { useSinglePrismicDocument } from "@prismicio/react";
-import { getData } from "../../helpers/functions";
+import { getAboutData } from "../../helpers/functions";
 
 const About = () => {
     const [document] = useSinglePrismicDocument('about')
 
     if (!document) return
 
-    const data = getData(document.data)
+    const data = getAboutData(document.data)
     const { imgSrc, imgAlt, textContent } = data
 
     return (

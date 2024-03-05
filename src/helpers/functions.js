@@ -1,12 +1,12 @@
 import * as prismicH from '@prismicio/helpers';
 
-export const getData = data => {
-    
+
+export const getArticleData = data => {
+
     const {
         title,
         intro,
-        img ='',
-        text,
+        img = '',
         content,
         date,
         category = '',
@@ -14,20 +14,36 @@ export const getData = data => {
 
     const titleText = prismicH.asText(title)
     const introText = prismicH.asText(intro)
-    const textContent = text
     const articleContent = content
     const imgSrc = prismicH.asImageSrc(img)
     const imgAlt = img.alt
     const categoryName = category.uid
 
-    return { 
-        titleText, 
-        introText, 
-        imgSrc, 
-        imgAlt, 
-        textContent, 
+    return {
+        titleText,
+        introText,
+        imgSrc,
+        imgAlt,
         articleContent,
-        categoryName, 
+        categoryName,
         date
     }
+}
+export const getAboutData = data => {
+
+    const { img, text, } = data
+
+    const textContent = text
+    const imgSrc = prismicH.asImageSrc(img)
+    const imgAlt = img.alt
+
+    return {
+        imgSrc,
+        imgAlt,
+        textContent,
+    }
+}
+export const getCategoriesData = categories => {
+
+    return categories.map(item => prismicH.asText(item.data.name));
 }

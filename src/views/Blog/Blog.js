@@ -4,7 +4,7 @@ import { Pagination, ButtonsSection, CategoriesSection } from "../../components"
 import StyledBlog from "./Blog.styled";
 import styled from "styled-components";
 import { useParams, Redirect } from "react-router-dom"
-import { getData } from "../../helpers/functions";
+import { getArticleData } from "../../helpers/functions";
 
 const Blog = ({ posts, categories }) => {
     const { id, category } = useParams()
@@ -29,7 +29,7 @@ const Blog = ({ posts, categories }) => {
 
             const newPostsArr = [...posts]
             setPostsToDisplay(newPostsArr.filter(post => {
-                const { categoryName } = getData(post.data)
+                const { categoryName } = getArticleData(post.data)
 
                 return categoryName === category
             }))
@@ -54,7 +54,10 @@ const Blog = ({ posts, categories }) => {
     return (
         <>
             {/* {posts === postsToDisplay && <StyledHeading>All articles</StyledHeading>} */}
-            <CategoriesSection categories={categories} setPage={setPage} />
+            <CategoriesSection
+                categories={categories}
+                page={page}
+                setPage={setPage} />
             <StyledBlog>
                 <Pagination 
                     paginationLimit={paginationLimit}

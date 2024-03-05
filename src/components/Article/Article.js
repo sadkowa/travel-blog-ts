@@ -4,10 +4,12 @@ import styled, { css } from "styled-components";
 import StyledArticle from "./Arcticle.styled";
 import { Wrapper, Button } from '../'
 
-import { getData } from "../../helpers/functions";
-import { Link } from "react-router-dom";
+import { getArticleData } from "../../helpers/functions";
+import { Link, Redirect } from "react-router-dom";
 
 const Article = ({ post, view }) => {
+
+    if (!post) return <Redirect to='/404.html' />
 
     const {
         titleText,
@@ -17,7 +19,7 @@ const Article = ({ post, view }) => {
         imgAlt,
         categoryName,
         date,
-    } = getData(post.data)
+    } = getArticleData(post.data)
 
     const slug = post.uid
 
