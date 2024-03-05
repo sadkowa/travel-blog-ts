@@ -10,7 +10,7 @@ import ScrollToTop from './ScrollToTop';
 function App() {
   const [posts] = useAllPrismicDocumentsByType('post');
   const [categories] = useAllPrismicDocumentsByType('category');
-
+  
   if (!posts || !categories) return
 
   const categoriesArr = categories.map(item => prismicH.asText(item.data.name));
@@ -22,10 +22,10 @@ function App() {
         <ScrollToTop />
         <Switch>
           <Route exact path='/'>
-            <Blog posts={posts} />
+            <Blog categories={categoriesArr} posts={posts} />
           </Route>
           <Route exact path='/page/:id'>
-            <Blog posts={posts} />
+            <Blog categories={categoriesArr} posts={posts} />
           </Route>
           <Route exact path='/about'>
             <About />
@@ -33,10 +33,13 @@ function App() {
           <Route exact path='/contact'>
             <Contact />
           </Route>
-          <Route exact path='/article/:category'>
-            <ArticlePage posts={posts}/>
+          <Route  exact path='/articles/:category'>
+            <Blog categories={categoriesArr} posts={posts} />
           </Route>
-          <Route exact path='/article/:category/:slug'>
+          <Route exact path='/articles/:category/page/:id'>
+            <Blog categories={categoriesArr} posts={posts} />
+          </Route>
+          <Route exact path='/articles/:category/:slug'>
             <ArticlePage posts={posts} />
           </Route>
           <Route path='/404.html'>
