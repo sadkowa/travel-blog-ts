@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import Pagination from "./Pagination";
 import ButtonsSection from "./ButtonsSection";
 import NotFound from "./NotFound";
+import CategoriesSection from "./CategoriesSection";
 
 export {
     Wrapper,
@@ -20,4 +21,5 @@ export {
     Pagination,
     ButtonsSection,
     NotFound,
+    CategoriesSection,
 }
