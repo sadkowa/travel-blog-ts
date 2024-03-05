@@ -29,13 +29,22 @@ export const getArticleData = data => {
 }
 
 export const getAboutData = data => {
-    const { img, text, } = data
+    const { img, text } = data
 
     const textContent = text
     const imgSrc = prismicH.asImageSrc(img)
     const imgAlt = img.alt
 
     return { imgSrc, imgAlt, textContent }
+}
+
+export const getContactData = data => {
+    const { title, text } = data
+
+    const titleText = prismicH.asText(title)
+    const textContent = prismicH.asText(text)
+
+    return { titleText, textContent }
 }
 
 export const getCategoriesData = categories => {
