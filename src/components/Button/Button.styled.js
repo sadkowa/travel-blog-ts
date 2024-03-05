@@ -14,7 +14,6 @@ const StyledButton = styled.button`
     &:hover {
         background-color: ${({ theme }) => theme.colors.lightHover};
     }
-   
 
     ${({ $variant, theme }) => $variant === 'dark' && css`
         background-color: ${theme.colors.dark};
@@ -35,11 +34,8 @@ const StyledButton = styled.button`
         padding: ${({ theme }) => theme.spaces.small} ${({ theme }) => theme.spaces.medium};
         font-size: ${({ theme }) => theme.fontSizes.xsmall};
         font-weight: 400;
-    }
-    @media ${props => props.theme.media.tablet} {
         min-width: 140px;
     }
-    
 `
 
 export default StyledButton

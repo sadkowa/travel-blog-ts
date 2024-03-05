@@ -5,7 +5,6 @@ const StyledButtonsSection = styled.section`
     padding-bottom: ${({ theme }) => theme.spaces.large};
     justify-content: center;
 
-
 @media ${({ theme }) => theme.media.tablet} {
     padding-bottom: ${({ theme }) => theme.spaces.xlarge};
 }

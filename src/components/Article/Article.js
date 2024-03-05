@@ -35,7 +35,7 @@ const Article = ({ post, view }) => {
                     : <StyledText>{introText}</StyledText>}
 
                 {!view && <StyledFooter>
-                    <Link to={`/article/${categoryName}/${slug}`}>
+                    <Link to={`/articles/${categoryName}/${slug}`}>
                         <Button>{'Read more >>'}</Button>
                     </Link>
                     <StyledCategory>{categoryName}</StyledCategory>
@@ -104,7 +104,7 @@ export const StyledText = styled.p`
     }
     @media ${({ theme }) => theme.media.desktop} {
         margin: ${({ theme }) => theme.spaces.large} 0;
-        min-height: 200px;
+        min-height: 120px;
     }
 `
 
@@ -125,7 +125,7 @@ const StyledFooter = styled.footer`
     margin-bottom: ${({ theme }) => theme.spaces.medium};
 `
 
-const StyledCategory = styled.h6`
+export const StyledCategory = styled.h6`
     margin-right: ${({ theme }) => theme.spaces.small};
     font-size: ${({ theme }) => theme.fontSizes.xxxsmall};
 
