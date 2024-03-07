@@ -5,7 +5,7 @@ import { StyledCategory } from "../Article/Article";
 import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
-const CategoriesSection = ({ categories, page, setPage }) => {
+const CategoriesSection = ({ categories, currentCategory = 'all', page, setPage }) => {
     const styles = {
         textDecoration: 'none',
         color: 'black'
@@ -19,7 +19,7 @@ const CategoriesSection = ({ categories, page, setPage }) => {
         {categories.map((cat, index) => {
             return <NavLink
                 key={index}
-                exact={(cat === 'all')}
+                exact={(cat === 'all') && (page === 1 || (currentCategory !== 'all' && page !== 1))}
                 to={cat === 'all' ? '/' : `/articles/${cat}`}
                 style={styles}
                 activeStyle={activeStyle}>
@@ -33,7 +33,6 @@ const CategoriesSection = ({ categories, page, setPage }) => {
 }
 
 export default CategoriesSection
-
 
 const StyledCategoryInSection = styled(StyledCategory)(
     () => (css`

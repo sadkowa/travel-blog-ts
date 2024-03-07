@@ -51,6 +51,7 @@ const Blog = ({ posts, categories }) => {
         <>
             <CategoriesSection
                 categories={categories}
+                currentCategory={category}
                 page={page}
                 setPage={setPage} />
             <StyledBlog>
