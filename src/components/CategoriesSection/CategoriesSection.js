@@ -3,9 +3,11 @@ import StyledCategoriesSection from "./CategoriesSection.styled";
 import { StyledCategory } from "../Article/Article";
 
 import styled, { css } from "styled-components";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink, useLocation } from "react-router-dom";
 
-const CategoriesSection = ({ categories, currentCategory = 'all', page, setPage }) => {
+const CategoriesSection = ({ categories, currentCategory = 'all', setPage }) => {
+    const { pathname } = useLocation()
+
     const styles = {
         textDecoration: 'none',
         color: 'black'
@@ -19,7 +21,8 @@ const CategoriesSection = ({ categories, currentCategory = 'all', page, setPage 
         {categories.map((cat, index) => {
             return <NavLink
                 key={index}
-                exact={(cat === 'all') && (page === 1 || (currentCategory !== 'all' && page !== 1))}
+                exact={(cat === 'all') && ((currentCategory === 'all' && !pathname.includes('/page/')) ||
+                    (currentCategory !== 'all'))}
                 to={cat === 'all' ? '/' : `/articles/${cat}`}
                 style={styles}
                 activeStyle={activeStyle}>
