@@ -2,7 +2,7 @@
 
 [Click to find out how it works!](https://my-priv-blog.netlify.app)
 
-This task involved creating a blog using the headless CMS, Prismic, allowing content creation without the need for a dedicated admin panel. Utilized Prismic's API to fetch blog content, with a focus on well-designed URLs for an optimal user experience. 
+This task involved creating a blog using the headless CMS (Prismic), allowing content creation without the need for a dedicated admin panel. Utilized Prismic's API to fetch blog content, with a focus on well-designed URLs for an optimal user experience. 
 Implemented React Router DOM for efficient navigation, including categories, pagination and articles' names. 
 
 ### Solutions
