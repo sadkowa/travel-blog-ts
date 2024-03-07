@@ -19,11 +19,10 @@ const CategoriesSection = ({ categories, page, setPage }) => {
         {categories.map((cat, index) => {
             return <NavLink
                 key={index}
-                exact={(cat === 'all' && page === 1)  ? true : false}
+                exact={(cat === 'all')}
                 to={cat === 'all' ? '/' : `/articles/${cat}`}
                 style={styles}
-                activeStyle={activeStyle}
-            >
+                activeStyle={activeStyle}>
                 <StyledCategoryInSection
                     onClick={() => setPage(1)}
                 >{cat}
