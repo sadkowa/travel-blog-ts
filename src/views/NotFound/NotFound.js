@@ -11,16 +11,21 @@ const NotFound = () => {
     }
     return (
         <StyledNotFound>
-            <StyledText>The provided page does not exist! <br />Please return to <Link style={styles} to="/"><StyledSpan>Home</StyledSpan></Link>.</StyledText>
-
+            <StyledText>
+                The provided page does not exist! <br />
+                Please return to
+                <Link style={styles} to="/">
+                    <StyledSpan>Home</StyledSpan>
+                </Link>.
+            </StyledText>
         </StyledNotFound>
-    );
+    )
 }
 
 export default NotFound;
 
 const StyledSpan = styled.span`
-    padding-left: 10px;
+    padding-left: ${({theme}) => theme.spaces.small};
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: 2px;

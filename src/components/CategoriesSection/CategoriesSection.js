@@ -38,7 +38,7 @@ export default CategoriesSection
 
 const StyledCategoryInSection = styled(StyledCategory)(
     () => (css`
-        padding: 5px 10px ;
+        padding: ${({theme}) => theme.spaces.xxsmall} ;
         width: 100%;
         min-width: 50px;
         text-align: center;
@@ -48,10 +48,10 @@ const StyledCategoryInSection = styled(StyledCategory)(
             border: 1px solid #ccc;
         `}
 
-        @media ${props => props.theme.media.tablet} {
+        @media ${({theme}) => theme.media.tablet} {
             min-width: 85px;
         }
-        @media ${props => props.theme.media.desktop} {
+        @media ${({theme}) => theme.media.desktop} {
             min-width: 100px;
         }
     `)

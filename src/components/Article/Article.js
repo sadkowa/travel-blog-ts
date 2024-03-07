@@ -2,7 +2,7 @@ import React from "react";
 
 import styled, { css } from "styled-components";
 import StyledArticle from "./Arcticle.styled";
-import { Wrapper, Button } from '../'
+import { Button } from '../'
 
 import { getArticleData } from "../../helpers/functions";
 import { Link, Redirect } from "react-router-dom";
@@ -26,7 +26,7 @@ const Article = ({ post, view }) => {
     return (
         <StyledArticle>
             <StyledImg src={imgSrc} alt={imgAlt} $view={view} />
-            <Wrapper>
+            <StyledBox>
                 <StyledTitle>{titleText}</StyledTitle>
                 <StyledDate>{date}</StyledDate>
                 {view
@@ -35,18 +35,22 @@ const Article = ({ post, view }) => {
                         {item.text}
                     </StyledArticleContent>)
                     : <StyledText>{introText}</StyledText>}
-
                 {!view && <StyledFooter>
                     <Link to={`/articles/${categoryName}/${slug}`}>
                         <Button>{'Read more >>'}</Button>
                     </Link>
                     <StyledCategory>{categoryName}</StyledCategory>
                 </StyledFooter>}
-            </Wrapper>
+            </StyledBox>
         </StyledArticle>)
 }
 
 export default Article
+
+const StyledBox =styled.div`
+    width: 95%;
+    margin: ${({ theme }) => theme.spaces.medium} auto;
+`
 
 const StyledImg = styled.img`
     width: 100%;
@@ -98,11 +102,11 @@ const StyledDate = styled.h5`
 export const StyledText = styled.p`
     margin: ${({ theme }) => theme.spaces.medium} 0;
     font-size: ${({ theme }) => theme.fontSizes.xxxsmall};
-    line-height: ${({ theme }) => theme.fontSizes.xxsmall};
+    line-height: ${({ theme }) => theme.fontSizes.small};
 
     @media ${({ theme }) => theme.media.tablet} {
         font-size: ${({ theme }) => theme.fontSizes.xxsmall};
-        line-height: ${({ theme }) => theme.fontSizes.medium};
+        line-height: ${({ theme }) => theme.fontSizes.large};
     }
     @media ${({ theme }) => theme.media.desktop} {
         margin: ${({ theme }) => theme.spaces.large} 0;
@@ -115,7 +119,7 @@ const StyledArticleContent = styled(StyledText)(
         min-height: 0;
 
         &:last-child {
-            padding-bottom: 50px
+            padding-bottom: ${({ theme }) => theme.spaces.xxlarge} 
         }
     ` )
 )

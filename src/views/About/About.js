@@ -30,13 +30,13 @@ export default About
 
 
 const StyledImgPerson = styled.img`
-    margin: 20px 0;
+    margin: ${({theme}) => theme.spaces.medium}  0;
 
     @media ${({ theme }) => theme.media.tablet} {
         float: left;
         height: 300px;
         width: 300px;
-        margin: 0 20px 20px 0;
+        margin: 0 ${({theme}) => theme.spaces.medium} ${({theme}) => theme.spaces.medium} 0;
     }
 `
 

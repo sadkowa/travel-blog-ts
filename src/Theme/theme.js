@@ -22,7 +22,7 @@ const themeSettings = {
         large: '15px',
     },
     fontSizes: {
-        xxxsmall: '1rem',
+        xxxsmall: '1.1rem',
         xxsmall: '1.3rem',
         xsmall: '1.5rem',
         small: '1.8rem',

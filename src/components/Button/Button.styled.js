@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const StyledButton = styled.button`
-    min-width: 130px;
+    min-width: 100px;
     padding: ${({ theme }) => theme.spaces.xsmall} ${({ theme }) => theme.spaces.small};
     font-size: ${({ theme }) => theme.fontSizes.xxxsmall};
     font-weight: 700;

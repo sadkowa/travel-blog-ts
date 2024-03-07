@@ -32,11 +32,19 @@ const Contact = () => {
                 </StyledTitle>
                 <StyledTitle>
                     <FaFacebook />
-                    <MediaLink rel="stylesheet" href="https://facebook.com">My facebook</MediaLink>
+                    <MediaLink
+                        rel="stylesheet"
+                        href="https://facebook.com">
+                        My facebook
+                    </MediaLink>
                 </StyledTitle>
                 <StyledTitle>
                     <FaLinkedin />
-                    <MediaLink rel="stylesheet" href="https://linkedin.com">My linkedIn</MediaLink>
+                    <MediaLink
+                        rel="stylesheet"
+                        href="https://linkedin.com">
+                        My linkedIn
+                    </MediaLink>
                 </StyledTitle>
             </StyledContactInfo>
         </StyledContact>
@@ -66,33 +74,46 @@ const StyledContactInfo = styled.section`
     display: flex;
     flex-direction: column;
     align-items: left;
-    gap:10px;
-    margin: 30px auto 80px;
+    gap: ${({ theme }) => theme.spaces.small};
+    margin: ${({ theme }) => theme.spaces.large} auto 80px;
 `
 
 const StyledTitle = styled.h5`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:30px;
-    font-size: 1.6rem;
+    gap: ${({ theme }) => theme.spaces.large};
+    font-size: ${({ theme }) => theme.fontSizes.xsmall};
+
+    @media ${({ theme }) => theme.media.tablet} {
+        font-size: ${({ theme }) => theme.fontSizes.small};
+    };
 `
 
 const MediaLink = styled.a`
     flex-grow: 1;
     color: black;
     text-decoration: none;
-    font-weight: 300;
+    font-weight: 400;
     min-width: 200px;
+    font-size: ${({ theme }) => theme.fontSizes.xxxsmall};
 
     &:hover {
         font-weight: 500
     }
+
+    @media ${({ theme }) => theme.media.tablet} {
+        font-size: ${({ theme }) => theme.fontSizes.xxsmall};
+    };
 `
 
 const MediaText = styled.p`
     flex-grow: 1;
-    font-weight: 300;
+    font-weight: 400;
     min-width: 200px;
+    font-size: ${({ theme }) => theme.fontSizes.xxxsmall};
 
+    @media ${({ theme }) => theme.media.tablet} {
+        font-size: ${({ theme }) => theme.fontSizes.xxsmall};
+    };
 `

@@ -60,7 +60,7 @@ const StyledList = styled.ul`
   justify-content: end;
   align-items: center;
   height: 100%;
-  margin: 0 30px;
+  margin: 0 ${({theme}) => theme.spaces.large} ;
   list-style: none;
 `
 
