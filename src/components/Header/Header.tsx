@@ -1,14 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import StyledHeader from "./Header.styled";
-import { MainHeading, NavBar } from '../'
+import { MainHeading, NavBar } from '..'
 
 import { navTitles } from "../../helpers/data"
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+
 const Header = () => {
 
-  const ListItem = ({ children }) => {
+  type Props = {
+    children: ReactNode
+  }
+
+  const ListItem = ({ children }: Props) => {
     return <StyledListItem>{children}</StyledListItem>
   }
 

@@ -6,12 +6,21 @@ import StyledBlog from "./Blog.styled";
 import { useParams, Redirect } from "react-router-dom"
 import { filterArticles } from "../../helpers/functions";
 
-const Blog = ({ posts, categories }) => {
-    const { id, category } = useParams()
+type Params = {
+    id?: string,
+    category?: string
+}
 
-    const [page, setPage] = useState(1)
+type Props = {
+    posts: any,
+    categories: any
+}
+const Blog = ({ posts, categories }: Props) => {
+    const { id, category }: Params = useParams()
+
+    const [page, setPage] = useState<number>(1)
     const [postsToDisplay, setPostsToDisplay] = useState(posts)
-    const [categoryToDisplay, setCategoryToDisplay] = useState(category)
+    const [categoryToDisplay, setCategoryToDisplay] = useState<string>(category ?? '')
 
     const paginationLimit = 4
     const pagesNumber = Math.ceil(postsToDisplay.length / paginationLimit)
@@ -33,7 +42,7 @@ const Blog = ({ posts, categories }) => {
             setCategoryToDisplay(category)
         } else {
             setPostsToDisplay(posts)
-            setCategoryToDisplay(null)
+            setCategoryToDisplay('')
         }
     }, [category, posts, categories])
 
@@ -43,7 +52,7 @@ const Blog = ({ posts, categories }) => {
         }
     } 
 
-    if (id > pagesNumber) {
+    if (Number(id as string) > pagesNumber) {
         return <Redirect to='/404.html' />
     }
 

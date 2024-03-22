@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 
 import StyledButtonsSection from "./ButtonsSection.styled";
-import { Button } from "../";
+import { Button } from "..";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const ButtonsSection = ({ page, pages, category }) => {
+type Props = {
+    page: number,
+    pages: number,
+    category: string
+}
+
+const ButtonsSection = ({ page, pages, category }: Props) => {
     const [slug, setSlug] = useState('/page/')
 
     useEffect(() => {

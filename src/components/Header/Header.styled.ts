@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import img from '../../assets/header-img.jpg'
 
+
 const StyledHeader = styled.header`
     display: flex;
     flex-direction: column;
