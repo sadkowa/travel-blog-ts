@@ -1,7 +1,7 @@
- Converting JavaScript project to Typescript - training
+# Converting JavaScript project to TypeScript - training
 
 
-# React Router Prismic Blog
+## React Router Prismic Blog
 
 [Click to find out how it works!](https://my-priv-blog.netlify.app)
 
