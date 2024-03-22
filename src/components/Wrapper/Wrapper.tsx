@@ -1,7 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import StyledWrapper from "./Wrapper.styled";
 
-const Wrapper = ({ children }) => {
+type Props = {
+    children: ReactNode
+}
+const Wrapper = ({ children }: Props) => {
 
     return <StyledWrapper>{children}</StyledWrapper>
 }

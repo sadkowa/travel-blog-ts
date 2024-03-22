@@ -5,16 +5,25 @@ import { StyledCategory } from "../Article/Article";
 import styled, { css } from "styled-components";
 import { NavLink, useLocation } from "react-router-dom";
 
-const CategoriesSection = ({ categories, currentCategory = 'all', setPage }) => {
+type Props = {
+    categories: string[],
+    currentCategory?: string,
+    setPage: (id: number)=> void
+}
+
+const CategoriesSection = ({ categories, currentCategory = 'all', setPage }: Props) => {
+
     const { pathname } = useLocation()
 
     const styles = {
         textDecoration: 'none',
-        color: 'black'
+        color: 'black',
+        backgroundColor: 'white',
+        border: '1px solid #ccc',
     }
 
     const activeStyle = {
-        border: '1px solid #ccc'
+        backgroundColor: '#ccc',
     }
 
     return <StyledCategoriesSection>
@@ -43,11 +52,6 @@ const StyledCategoryInSection = styled(StyledCategory)(
         width: 100%;
         min-width: 50px;
         text-align: center;
-        background-color: white;
-
-        ${({ $active }) => $active && css`
-            border: 1px solid #ccc;
-        `}
 
         @media ${({theme}) => theme.media.tablet} {
             min-width: 85px;

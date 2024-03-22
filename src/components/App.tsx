@@ -1,8 +1,10 @@
+import React from 'react';
 import { Footer, Header, Wrapper } from '.'
 import { About, Blog, Contact, ArticlePage, NotFound } from '../views';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom/'
 
 import { useAllPrismicDocumentsByType } from "@prismicio/react";
+
 
 import ScrollToTop from './ScrollToTop';
 import { getCategoriesData } from '../helpers/functions';
@@ -13,7 +15,7 @@ function App() {
   
   if (!posts || !categories) return
 
-  const categoriesArr = getCategoriesData(categories)
+  const categoriesArr: string[] = getCategoriesData(categories)
 
   return (
     <Router>

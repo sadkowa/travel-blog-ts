@@ -6,9 +6,9 @@ const StyledWrapper = styled.div`
     margin: 0 auto;
     padding-bottom: 80px;
 
-    @media ${({ theme }) => theme.media.tablet} {
+    /* @media ${({ theme }) => theme.media.tablet} {
         padding-bottom: 100px; 
-    }
+    } */
 `
 
 export default StyledWrapper

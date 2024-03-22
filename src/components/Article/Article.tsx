@@ -1,14 +1,19 @@
 import React from "react";
 
 import styled, { css } from "styled-components";
-import StyledArticle from "./Arcticle.styled";
-import { Button } from '../'
+import StyledArticle from "./Article.styled";
+import { Button } from '..'
 
 import { getArticleData } from "../../helpers/functions";
 import { Link, Redirect } from "react-router-dom";
 
-const Article = ({ post, view }) => {
+type Props = {
+    post: any,
+    view?: boolean
+}
 
+const Article = ({ post, view = false }: Props) => {
+   
     if (!post) return <Redirect to='/404.html' />
 
     const {
@@ -52,7 +57,9 @@ const StyledBox =styled.div`
     margin: ${({ theme }) => theme.spaces.medium} auto;
 `
 
-const StyledImg = styled.img`
+const StyledImg = styled.img.attrs<{ $view: boolean }>(props=>({
+    $view: props.$view
+}))`
     width: 100%;
     height: 200px;
     object-fit: cover;
